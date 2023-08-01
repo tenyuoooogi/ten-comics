@@ -37,7 +37,7 @@ class CategoriesTableSeeder extends Seeder
 
         foreach ($major_category_names as $major_category_name) {
             if ( $major_category_name == '男性向け') {
-                foreach ($man_caregories as $man_category) {
+                foreach ($man_categories as $man_category) {
                     Category::create([
                         'name' => $man_category,
                         'description' => $man_category,
