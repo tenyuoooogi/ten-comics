@@ -19,7 +19,7 @@ class ProductsTableSeeder extends Seeder
         ];
     
         foreach ($mangas as $manga){
-            Products::create([
+            Product::create([
                 'name' => $manga,
             ]);
         }
