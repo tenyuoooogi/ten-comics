@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
+Route::get('products/{product}/favorite', [ProductController::class, 'favorite'])->name('products.favorite');
 Route::resource('products', ProductController::class)->middleware(['auth', 'verified']);
 Auth::routes(['verify' => true]);
 

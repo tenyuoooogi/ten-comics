@@ -53,8 +53,8 @@
               <div class="row">
                  @foreach($comments as $comment)
                  <div class="offset-md-5 col-md-5">
-                     <p class="h3">{{$review->content}}</p>
-                     <label>{{$review->created_at}} {{$review->user->name}}</label>
+                     <p class="h3">{{$comment->content}}</p>
+                     <label>{{$comment->created_at}} {{$comment->user->name}}</label>
                  </div>
                  @endforeach
              </div><br />
@@ -62,11 +62,11 @@
              @auth
              <div class="row">
                  <div class="offset-md-5 col-md-5">
-                     <form method="POST" action="{{ route('reviews.store') }}">
+                     <form method="POST" action="{{ route('comments.store') }}">
                          @csrf
-                         <h4>レビュー内容</h4>
+                         <h4>コメント</h4>
                          @error('content')
-                             <strong>レビュー内容を入力してください</strong>
+                             <strong>コメントをする</strong>
                          @enderror
                          <textarea name="content" class="form-control m-2"></textarea>
                          <input type="hidden" name="product_id" value="{{$product->id}}">
@@ -78,5 +78,4 @@
          </div>
      </div>
  </div>
-</div>
  @endsection
