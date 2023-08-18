@@ -1,3 +1,51 @@
+
+   if ( $major_category_name == '女性向け') {
+                foreach ($woman_categories as $woman_category) {
+                    Category::create([
+                        'name' => $woman_category,
+                        'description' => $woman_category,
+                        'major_category_name' => $major_category_name
+                    ]);
+                }
+            }
+
+            if ( $major_category_name == '大人向け') {
+                foreach ($adult_categories as $adult_category) {
+                    Category::create([
+                        'name' => $adult_category,
+                        'description' => $adult_category,
+                        'major_category_name' => $major_category_name
+                        
+                        
+                    ]);
+                }
+            }
+
+            if ( $major_category_name == '子供向け') {
+                foreach ($child_categories as $child_category) {
+                    Category::create([
+                        'name' => $child_category,
+                        'description' => $child_category,
+                        'major_category_name' => $major_category_name
+                       
+                        
+                    ]);
+                }
+            }
+
+
+
+
+
+        }
+
+    }
+}
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

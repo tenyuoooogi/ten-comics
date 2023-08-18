@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -14,11 +15,23 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $products = Product::all();
  
-        return view('products.index', compact('products'));
+    public function index(Request $request)
+    {
+       
+       
+        if ($request->category !== null) {
+            $products = Product::where('category_id', $request->category)->paginate(15);
+            $total_count = Product::where('category_id', $request->category)->count();
+            $category = Category::find($request->category);
+        } else {
+            $products = Product::paginate(15);
+            $total_count = "";
+            $category = null;
+        }
+        $categories = Category::all();
+        $names = Category::pluck('name')->unique();
+        return view('products.index', compact('products','category','categories','names','total_count' ));
     }
 
     /**
@@ -104,5 +117,11 @@ class ProductController extends Controller
         $product->delete();
   
         return to_route('products.index');
+    }
+    public function favorite(Product $product)
+    {
+        Auth::user()->togglefavorite($product);
+
+        return back();
     }
 }
