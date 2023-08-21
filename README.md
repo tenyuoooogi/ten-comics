@@ -1,4 +1,83 @@
 
+  $mangas = [
+        'A','B','C','D','E','F','G','H','I','J','K','L'
+    ];
+   
+        
+
+
+foreach ($abcds as $abcd) {
+    Category::create([
+        'name' => $abcd,
+        'category_id' => $cate,
+
+    ]);
+
+
+ $abcds = [
+            'a','b','c','d'
+        ];
+        
+
+        $efghs = [
+            'e','f','g','h'
+        ];
+       
+        
+        $ijkls = [
+            'i','j','k','l'
+        ];
+        
+        $mnops = [
+            'm','o','p','q'
+        ];
+       
+    
+   
+    
+    foreach ($abcds as $abcd){
+            Product::create([
+                'name' => $abcd,
+                'category_id' => 1,
+               
+            ]);
+    }
+    foreach ($efghs as $efgh){
+        Product::create([
+            'name' => $efgh,
+            'category_id' => 2,
+           
+        ]);
+}
+foreach ($ijkls as $ijkl){
+    Product::create([
+        'name' => $ijkl,
+        'category_id' => 3,
+       
+    ]);
+}
+foreach ($mnops as $mnop){
+    Product::create([
+        'name' => $mnop,
+        'category_id' => 4,
+       
+    ]);
+}
+
+
+
+}
+
+}
+
+
+
+
+
+
+
+
+
    if ( $major_category_name == '女性向け') {
                 foreach ($woman_categories as $woman_category) {
                     Category::create([

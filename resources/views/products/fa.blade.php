@@ -2,16 +2,14 @@
  
  @section('content')
  <div class="row">
-
-
  <div class="top-bar">
-         @component('components.topbar', ['categories' => $categories])
+         @component('components.topbar', ['names' => $names])
          @endcomponent
 </div>
      <div class="col-9">
      <div class="container">
              @if ($category !== null)
-                 <a href="{{ route('products.index') }}">トップ</a> > <a href="#">{{ $category->name }}</a> 
+                 <a href="{{ route('products.index') }}">トップ</a> > <a href="#">{{ $category->major_category_name }}</a> > {{ $category->name }}
                  <h1>{{ $category->name }}の商品一覧{{$total_count}}件</h1>
              @endif
          </div>

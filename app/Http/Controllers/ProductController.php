@@ -21,17 +21,17 @@ class ProductController extends Controller
        
        
         if ($request->category !== null) {
-            $products = Product::where('category_id', $request->category)->paginate(15);
+            $products = Product::where('category_id', $request->category);
             $total_count = Product::where('category_id', $request->category)->count();
             $category = Category::find($request->category);
         } else {
-            $products = Product::paginate(15);
+            $products = Product::all();
             $total_count = "";
             $category = null;
         }
-        $categories = Category::all();
-        $names = Category::pluck('name')->unique();
-        return view('products.index', compact('products','category','categories','names','total_count' ));
+        $categories = Category::select('name')->get();
+       
+        return view('products.index', compact('products','category','categories','total_count' ));
     }
 
     /**
@@ -126,4 +126,6 @@ class ProductController extends Controller
 
         return back();
     }
+
+    
 }

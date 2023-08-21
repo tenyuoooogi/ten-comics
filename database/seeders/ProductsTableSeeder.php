@@ -16,16 +16,19 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        $mangas = [
-            'A','B','C','D','E','F','G','H','I','J','K','L'
-        ];
-        
-        foreach ($mangas as $manga){
-            Product::create([
-                'name' => $manga,
-              
-                
-            ]);
-        }
+      
+
+
+$array = [['A','1'],['B','2'],['C','3']];
+
+
+       foreach($array as $vals){
+        Product::Create([
+            'name' => $vals[0],
+            'category_id' => $vals[1],
+        ]);
+       }
+
+
     }
-}
+    }

@@ -70,7 +70,7 @@
                          @enderror
                          <textarea name="content" class="form-control m-2"></textarea>
                          <input type="hidden" name="product_id" value="{{$product->id}}">
-                         <button type="submit" class="btn samuraimart-submit-button ml-2">レビューを追加</button>
+                         <button type="submit" class="btn samuraimart-submit-button ml-2">コメントする</button>
                      </form>
                  </div>
              </div>

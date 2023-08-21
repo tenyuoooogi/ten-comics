@@ -1,8 +1,7 @@
 <div class="container">
-     @foreach ($names as $name)
-    
-     <label class="samuraimart-topbar-category-label"><a href="#">{{ $name }}</a></label>
-     
-         @endforeach
-    
+     @foreach ($categories as $category)
+     <label class="samuraimart-topbar-category-label"><a href="{{ route('products.index', ['category' => $category->id]) }}">{{ $category->name }}</a></label>
+        @endforeach
+
+        
  </div>
