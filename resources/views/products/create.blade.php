@@ -11,14 +11,6 @@
              <input type="text" name="name" id="product-name" class="form-control">
          </div>
          <div class="form-group">
-             <label for="product-description">商品説明</label>
-             <textarea name="description" id="product-description" class="form-control"></textarea>
-         </div>
-         <div class="form-group">
-             <label for="product-price">価格</label>
-             <input type="number" name="price" id="product-price" class="form-control">
-         </div>
-         <div class="form-group">
              <label for="product-category">カテゴリ</label>
              <select name="category_id" class="form-control" id="product-category">
                  @foreach ($categories as $category)

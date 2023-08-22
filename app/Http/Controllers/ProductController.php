@@ -30,9 +30,9 @@ class ProductController extends Controller
             $total_count = "";
             $category = null;
         }
-        $categories = Category::select('name')->get();
-       
-        return view('products.index', compact('products','category','categories','total_count' ));
+        $categories =Category::all();
+        $names = Category::pluck('name')->unique();
+        return view('products.index', compact('products','category','names','categories','total_count', ));
     }
 
     /**
@@ -57,8 +57,6 @@ class ProductController extends Controller
     {
         $product = new Product();
          $product->name = $request->input('name');
-         $product->description = $request->input('description');
-         $product->price = $request->input('price');
          $product->category_id = $request->input('category_id');
          $product->save();
  
@@ -101,8 +99,6 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        $product->price = $request->input('price');
         $product->category_id = $request->input('category_id');
         $product->update();
 
