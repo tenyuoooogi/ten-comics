@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FavoriController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +33,7 @@ Route::resource('products', ProductController::class)->middleware(['auth', 'veri
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::controller(FavoriController::class)->group(function () {
+    Route::get('favoris/index', 'index')->name('index');
+});
+

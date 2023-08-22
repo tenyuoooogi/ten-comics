@@ -20,6 +20,7 @@ class ProductController extends Controller
     {
        
        
+
         if ($request->category !== null) {
             $products = Product::where('category_id', $request->category);
             $total_count = Product::where('category_id', $request->category)->count();
