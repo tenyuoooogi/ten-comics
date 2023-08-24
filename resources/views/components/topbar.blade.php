@@ -3,7 +3,7 @@
     
      @foreach ($categories as $category)
      @if($category->name === $name)
-     <label class="samuraimart-topbar-category-label"><a href="{{ route('products.index', ['category' => $category->id]) }}">{{ $category->name }}</a></label>
+     <label class="topbar"><a href="{{ route('products.index', ['category' => $category->id]) }}">{{ $category->name }}</a></label>
      @endif
         @endforeach 
      @endforeach
