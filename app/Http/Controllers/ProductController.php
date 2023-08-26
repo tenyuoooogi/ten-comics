@@ -31,8 +31,8 @@ class ProductController extends Controller
             $category = null;
         }
         $categories =Category::all();
-        $names = Category::pluck('name')->unique();
-        return view('products.index', compact('products','category','names','categories','total_count', ));
+        
+        return view('products.index', compact('products','category','categories','total_count', ));
     }
 
     /**

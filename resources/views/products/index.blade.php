@@ -5,7 +5,7 @@
 
 
  <div class="top-bar">
-         @component('components.topbar', ['categories' => $categories, 'names' => $names])
+         @component('components.topbar', ['categories' => $categories])
          @endcomponent
 </div>
      <div class="col-9">
