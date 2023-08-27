@@ -1,4 +1,19 @@
-$names =  Category::select('name')->get();
+
+
+/**
+ * Remove the specified resource from storage.
+ *
+ * @param  \App\Models\User  $user
+ * @return \Illuminate\Http\Response
+ */
+
+}
+
+
+
+
+
+->get();
 
   $mangas = [
         'A','B','C','D','E','F','G','H','I','J','K','L'

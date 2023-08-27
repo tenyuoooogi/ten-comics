@@ -1,7 +1,9 @@
 @extends('layouts.app')
  
  @section('content')
- 
+ <div>
+     <a href="{{ route('products.index') }}"> トップへ戻る</a>
+ </div>
 
  <div class="row w-75">
  <div class="col-5 offset-1">
@@ -49,7 +51,7 @@
          </div>
  
          <div class="offset-1 col-10">
-              <!-- レビューを実装する箇所になります -->
+            
               <div class="row">
                  @foreach($comments as $comment)
                  <div class="offset-md-5 col-md-5">
