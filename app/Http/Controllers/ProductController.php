@@ -19,7 +19,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
        
-      
+        $recommend_products = Product::where('recommend_flag', true)->take(3)->get();
 
         if ($request->category !== null) {
             $products = Product::where('category_id', $request->category)->sortable()->paginate();
@@ -32,7 +32,7 @@ class ProductController extends Controller
         }
         $categories =Category::all();
         
-        return view('products.index', compact('products','category','categories','total_count', ));
+        return view('products.index', compact('products','category','categories','total_count','recommend_products' ));
     }
 
     /**
