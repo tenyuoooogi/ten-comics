@@ -22,11 +22,11 @@ class ProductController extends Controller
       
 
         if ($request->category !== null) {
-            $products = Product::where('category_id', $request->category)->paginate();
+            $products = Product::where('category_id', $request->category)->sortable()->paginate();
             $total_count = Product::where('category_id', $request->category)->count();
             $category = Category::find($request->category);
         } else {
-            $products = Product::all();
+            $products = Product::sortable()->paginate();
             $total_count = "";
             $category = null;
         }
